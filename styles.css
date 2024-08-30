@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    cursor: none; /* Hide default cursor */
+}
+
+#game-area {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    background-color: #fff;
+    border: 2px solid #000;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.target {
+    position: absolute;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.small {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+}
+
+.medium {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+}
+
+.large {
+    width: 70px;
+    height: 70px;
+    background-color: green;
+}
+
+#custom-pointer {
+    position: absolute;
+    width: 50px; /* Adjust to the size of your point image */
+    height: 50px; /* Adjust to the size of your point image */
+    background: url('point.png') no-repeat center center; /* Your custom pointer image */
+    background-size: contain;
+    pointer-events: none; /* Prevent the pointer from interfering with clicks */
+    z-index: 1000; /* Make sure the custom pointer is on top */
+    transform: translate(-50%, -50%); /* Center the pointer on the mouse position */
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.5s; /* Shake effect duration */
+}
